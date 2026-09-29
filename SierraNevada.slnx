@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/SierraNevada.Api/SierraNevada.Api.csproj" />
+    <Project Path="src/SierraNevada.Application/SierraNevada.Application.csproj" />
+    <Project Path="src/SierraNevada.Domain/SierraNevada.Domain.csproj" />
+    <Project Path="src/SierraNevada.Infrastructure/SierraNevada.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/SierraNevada.Tests/SierraNevada.Tests.csproj" />
+  </Folder>
+</Solution>
