@@ -1,0 +1,20 @@
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "ConnectionStrings": {
+    "SierraNevadaDb": "Host=localhost;Port=5432;Database=sierranevada;Username=postgres;Password=CAMBIAR"
+  },
+  "Jwt": {
+    "SecretKey": "cambiar-por-una-clave-local-de-al-menos-32-caracteres",
+    "Issuer": "SierraNevada.Api",
+    "Audience": "SierraNevada.Cliente",
+    "ExpirationMinutes": 480
+  },
+  "Cors": {
+    "AllowedOrigins": ["http://localhost:5173"]
+  }
+}
