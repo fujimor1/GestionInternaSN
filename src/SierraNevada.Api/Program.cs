@@ -77,7 +77,13 @@ builder.Services.AddScoped<IHistorialMovimientoRepository, HistorialMovimientoRe
 builder.Services.AddScoped<IEnfermedadRepository, EnfermedadRepository>();
 builder.Services.AddScoped<ITablaReferenciaVersionRepository, TablaReferenciaVersionRepository>();
 
-// Casos de uso del módulo Producción.
+// Repositorios del módulo Inventario y Kardex.
+builder.Services.AddScoped<SierraNevada.Application.Inventario.Repositories.ITipoAlimentoRepository, SierraNevada.Infrastructure.Inventario.TipoAlimentoRepository>();
+builder.Services.AddScoped<SierraNevada.Application.Inventario.Repositories.IProveedorAlimentoRepository, SierraNevada.Infrastructure.Inventario.ProveedorAlimentoRepository>();
+builder.Services.AddScoped<SierraNevada.Application.Inventario.Repositories.ILoteAlimentoRepository, SierraNevada.Infrastructure.Inventario.LoteAlimentoRepository>();
+builder.Services.AddScoped<SierraNevada.Application.Inventario.Repositories.IKardexAlimentoRepository, SierraNevada.Infrastructure.Inventario.KardexAlimentoRepository>();
+
+// Casos de uso del módulo Producción y ML.
 builder.Services.AddScoped<RegistrarMuestreoService>();
 builder.Services.AddScoped<RegistrarAlimentacionRealService>();
 builder.Services.AddScoped<RegistrarMortalidadService>();
@@ -86,6 +92,12 @@ builder.Services.AddScoped<CambiarEtapaService>();
 builder.Services.AddScoped<CrearCampañaConLotesService>();
 builder.Services.AddScoped<CalcularCalibracionLoteService>();
 builder.Services.AddScoped<SierraNevada.Application.Produccion.Reportes.CalcularReporteProduccionGlobalService>();
+builder.Services.AddScoped<CalcularProyeccionTgcBayesianoService>();
+
+// Casos de uso del módulo Inventario y Reorden.
+builder.Services.AddScoped<SierraNevada.Application.Inventario.CasosDeUso.RegistrarIngresoAlimentoService>();
+builder.Services.AddScoped<SierraNevada.Application.Inventario.CasosDeUso.RegistrarEgresoAlimentoService>();
+builder.Services.AddScoped<SierraNevada.Application.Inventario.CasosDeUso.CalcularPlanReordenService>();
 
 // Módulo de usuarios/autenticación (propia, no ASP.NET Core Identity — ver docs/arquitectura-tecnica.md sección 6).
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
